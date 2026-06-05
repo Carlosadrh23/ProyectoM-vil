@@ -44,12 +44,31 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // TODO: aquí va la lógica de registro
-            Toast.makeText(this, "Cuenta creada correctamente", Toast.LENGTH_SHORT).show()
+            showSuccessDialog()
         }
 
         tvGoLogin.setOnClickListener {
-            finish() // regresa al Login sin crear una nueva instancia
+            finish()
         }
+    }
+
+    private fun showSuccessDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.registro_exitoso, null)
+        val dialog = android.app.AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(false)
+            .create()
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        dialogView.findViewById<Button>(R.id.btnGoLogin).setOnClickListener {
+            dialog.dismiss()
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+            finish()
+        }
+
+        dialog.show()
     }
 }

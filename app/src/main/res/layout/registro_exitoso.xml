@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    android:background="#1E2A38">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Cuenta creada con exito!"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="24dp">
+
+        <View
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/circle_green"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="✓"
+            android:textSize="40sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnGoLogin"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Iniciar sesion"
+        android:backgroundTint="#00CFFF"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+</LinearLayout>

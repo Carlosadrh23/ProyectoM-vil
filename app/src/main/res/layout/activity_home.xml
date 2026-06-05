@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿A dónde vas?"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explora estancias únicas"
+                android:textColor="#E0F7FA"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_account_circle"
+            android:background="@drawable/circle_dark"
+            android:padding="6dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/search_background"
+        android:hint="Buscar destino.."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:paddingStart="48dp"
+        android:paddingEnd="16dp"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvNearby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerca de ti"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etSearch"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProperties"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tvNearby"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search"
+            android:background="?attr/selectableItemBackground"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_favorite"
+            android:background="?attr/selectableItemBackground"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_calendar"
+            android:background="?attr/selectableItemBackground"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_chat"
+            android:background="?attr/selectableItemBackground"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

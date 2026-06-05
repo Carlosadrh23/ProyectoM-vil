@@ -29,8 +29,9 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // TODO: aquí va la lógica de autenticación
-            Toast.makeText(this, "Iniciando sesión...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         tvGoRegister.setOnClickListener {
