@@ -4,17 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeActivity : AppCompatActivity() {
+class SavedActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_saved)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
         @Suppress("DEPRECATION")
@@ -24,48 +23,38 @@ class HomeActivity : AppCompatActivity() {
                         or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 )
 
-        val rvProperties = findViewById<RecyclerView>(R.id.rvProperties)
-        val btnSaved = findViewById<ImageButton>(R.id.btnSaved)
+        val rvSaved = findViewById<RecyclerView>(R.id.rvSaved)
+        val btnHome = findViewById<ImageButton>(R.id.btnHome)
         val btnMessages = findViewById<ImageButton>(R.id.btnMessages)
-        val ivAvatar = findViewById<ImageView>(R.id.ivAvatar)
 
-        val properties = listOf(
+        val savedProperties = listOf(
             Property(
-                name = "Casa de playa, La paz",
-                dates = "2 noches · jun 10-12",
+                name = "Casa de playa, La Paz",
+                dates = "jun 10-12 · 2 noches",
                 price = "$1820 / noche",
                 rating = "4.9",
                 imageRes = android.R.drawable.ic_menu_gallery
             ),
             Property(
-                name = "Casa, La paz",
-                dates = "3 noches · may 25-28",
+                name = "Casa, La Paz",
+                dates = "may 25-28 · 3 noches",
                 price = "$1900 / noche",
                 rating = "4.5",
-                imageRes = android.R.drawable.ic_menu_gallery
-            ),
-            Property(
-                name = "Departamento, La paz",
-                dates = "1 noche · jul 5-6",
-                price = "$950 / noche",
-                rating = "4.7",
                 imageRes = android.R.drawable.ic_menu_gallery
             )
         )
 
-        rvProperties.layoutManager = LinearLayoutManager(this)
-        rvProperties.adapter = PropertyAdapter(properties)
+        rvSaved.layoutManager = LinearLayoutManager(this)
+        rvSaved.adapter = SavedAdapter(savedProperties)
 
-        btnSaved.setOnClickListener {
-            startActivity(Intent(this, SavedActivity::class.java))
+        btnHome.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
         }
 
         btnMessages.setOnClickListener {
             startActivity(Intent(this, MessagesActivity::class.java))
-        }
-
-        ivAvatar.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 }

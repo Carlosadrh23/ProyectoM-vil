@@ -22,6 +22,15 @@
 
         <activity android:name=".HomeActivity" android:exported="false"/>
 
+        <activity android:name=".DetailActivity" android:exported="false"/>
+
+        <activity android:name=".SavedActivity" android:exported="false"/>
+
+        <activity android:name=".MessagesActivity" android:exported="false"/>
+
+        <activity android:name=".ProfileActivity" android:exported="false"/>
+
+
     </application>
 
 </manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/circle_dark"
+        android:text="SR"/>
+
+    <TextView
+        android:id="@+id/tvMessageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tvAvatar"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="Sofia R."
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvLastMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tvAvatar"
+        android:layout_toStartOf="@id/tvUnread"
+        android:layout_marginStart="12dp"
+        android:layout_below="@id/tvMessageName"
+        android:text="¡Bienvenido! El código de acces..."
+        android:textColor="#E0F7FA"
+        android:textSize="13sp"
+        android:ellipsize="end"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/tvMessageTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
+        android:text="10:32"
+        android:textColor="#E0F7FA"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/tvUnread"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/tvMessageTime"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:background="@drawable/circle_red"
+        android:visibility="gone"/>
+
+</RelativeLayout>

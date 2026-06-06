@@ -1,5 +1,6 @@
 package com.example.proyectoairbnbmovil
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,17 @@ class PropertyAdapter(private val properties: List<Property>) :
         holder.tvDates.text = property.dates
         holder.tvPrice.text = property.price
         holder.tvRating.text = property.rating
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context, DetailActivity::class.java)
+            intent.putExtra("name", property.name)
+            intent.putExtra("rating", property.rating)
+            intent.putExtra("reviews", "50")
+            intent.putExtra("description", "Vista al mar, alberca privada, terraza. A 2 min de la playa El Tecolote...")
+            intent.putExtra("host", "Pato Sanchez")
+            intent.putExtra("price", property.price)
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = properties.size
