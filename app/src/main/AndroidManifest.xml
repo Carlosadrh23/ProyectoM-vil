@@ -30,6 +30,14 @@
 
         <activity android:name=".ProfileActivity" android:exported="false"/>
 
+        <activity android:name=".EditProfileActivity" android:exported="false"/>
+
+        <activity android:name=".PaymentsActivity" android:exported="false"/>
+
+        <activity android:name=".NotificationsActivity" android:exported="false"/>
+
+        <activity android:name=".ChatActivity" android:exported="false"/>
+
 
     </application>
 

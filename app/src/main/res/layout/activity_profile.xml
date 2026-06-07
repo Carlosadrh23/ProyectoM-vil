@@ -207,6 +207,7 @@
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#444444"/>
 
                 <RelativeLayout
+                    android:id="@+id/btnPayments"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:paddingStart="16dp"
@@ -235,6 +236,7 @@
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#444444"/>
 
                 <RelativeLayout
+                    android:id="@+id/btnNotifications"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:paddingStart="16dp"

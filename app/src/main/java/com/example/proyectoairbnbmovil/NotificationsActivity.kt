@@ -4,15 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 
-class ProfileActivity : AppCompatActivity() {
+class NotificationsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.activity_notifications)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
         @Suppress("DEPRECATION")
@@ -22,31 +21,9 @@ class ProfileActivity : AppCompatActivity() {
                         or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 )
 
-        val tvLogout = findViewById<TextView>(R.id.tvLogout)
         val btnHome = findViewById<ImageButton>(R.id.btnHome)
         val btnSaved = findViewById<ImageButton>(R.id.btnSaved)
         val btnMessages = findViewById<ImageButton>(R.id.btnMessages)
-        val btnEditProfile = findViewById<View>(R.id.btnEditProfile)
-        val btnPayments = findViewById<View>(R.id.btnPayments)
-        val btnNotifications = findViewById<View>(R.id.btnNotifications)
-
-        btnEditProfile.setOnClickListener {
-            startActivity(Intent(this, EditProfileActivity::class.java))
-        }
-
-        btnPayments.setOnClickListener {
-            startActivity(Intent(this, PaymentsActivity::class.java))
-        }
-
-        btnNotifications.setOnClickListener {
-            startActivity(Intent(this, NotificationsActivity::class.java))
-        }
-
-        tvLogout.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-        }
 
         btnHome.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)

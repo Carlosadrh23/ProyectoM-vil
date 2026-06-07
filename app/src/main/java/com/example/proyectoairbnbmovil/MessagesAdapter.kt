@@ -1,5 +1,6 @@
 package com.example.proyectoairbnbmovil
 
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +39,12 @@ class MessagesAdapter(private val messages: List<Message>) :
             holder.tvUnread.text = message.unread.toString()
         } else {
             holder.tvUnread.visibility = View.GONE
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context, ChatActivity::class.java)
+            intent.putExtra("name", message.name)
+            it.context.startActivity(intent)
         }
     }
 
